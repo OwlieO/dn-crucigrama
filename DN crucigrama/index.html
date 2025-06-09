@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇨🇺 Crucigrama: Defensa Nacional de Cuba</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🇨🇺 Crucigrama: Defensa Nacional de Cuba</h1>
+                <p class="subtitle">Crucigrama educativo con 24 términos sobre la defensa nacional cubana</p>
+                
+                <!-- Controls -->
+                <div class="controls">
+                    <div class="badge" id="progress-badge">Palabras completadas: 0/24 (0%)</div>
+                    <button class="btn btn-warning" id="reset-btn">
+                        <span class="icon">🔄</span> Reiniciar
+                    </button>
+                    <button class="btn btn-danger" id="pdf-btn">
+                        <span class="icon">📄</span> Generar PDF
+                    </button>
+                </div>
+
+                <!-- Name Input Section -->
+                <div class="name-input-section" id="name-input-section">
+                    <h3>Generar PDF del Crucigrama</h3>
+                    <p>Ingresa tu nombre para incluirlo en el PDF del crucigrama</p>
+                    <div class="name-input-container">
+                        <div class="input-group">
+                            <label for="author-name">Tu nombre completo:</label>
+                            <input type="text" id="author-name" placeholder="Ej: María García Rodríguez" />
+                        </div>
+                        <button class="btn btn-success" id="create-pdf-btn">
+                            <span class="icon">⬇️</span> Crear PDF
+                        </button>
+                        <button class="btn btn-secondary" id="cancel-pdf-btn">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-area">
+            <!-- Crossword Grid -->
+            <section class="crossword-container">
+                <div class="crossword-grid" id="crossword-grid"></div>
+            </section>
+
+            <!-- Clues -->
+            <aside class="clues-container">
+                <div class="clues-section">
+                    <h3 class="clues-title">
+                        Horizontales →
+                        <span class="clue-count" id="horizontal-count">0/0</span>
+                    </h3>
+                    <div id="horizontal-clues" class="clues-list"></div>
+                </div>
+
+                <div class="clues-section">
+                    <h3 class="clues-title">
+                        Verticales ↓
+                        <span class="clue-count" id="vertical-count">0/0</span>
+                    </h3>
+                    <div id="vertical-clues" class="clues-list"></div>
+                </div>
+
+                <!-- Success Message -->
+                <div id="success-message" class="success-message">
+                    <div class="success-icon">🏆</div>
+                    <div class="success-title">¡EXCELENTE TRABAJO!</div>
+                    <div class="success-text">Has completado exitosamente el crucigrama sobre la defensa nacional de Cuba</div>
+                    <div class="success-stats">✅ 24/24 palabras completadas</div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Crucigrama Educativo - Defensa Nacional de Cuba</p>
+            <p>Proyecto educativo sin fines comerciales</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/crucigrama.js"></script>
+    <script src="js/pdf-generator.js"></script>
+    <script src="js/confetti.js"></script>
+    <script>
+        // Inicializar el juego cuando se carga la página
+        document.addEventListener('DOMContentLoaded', function() {
+            initGame();
+            setupEventListeners();
+        });
+    </script>
+</body>
+</html>
